@@ -6,13 +6,16 @@
 #    By: darkwater <marvin@42.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 20:18:43 by darkwater         #+#    #+#              #
-#    Updated: 2024/03/27 20:57:15 by darkwater        ###   ########.fr        #
+#    Updated: 2024/03/28 17:38:59 by darkwater        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= fractol
 
 SRC				= main.c		\
+				mandelbrot.c	\
+				julia.c			\
+				utils.c
 
 SRC_DIR			= ./src/
 
@@ -68,9 +71,11 @@ FCLEAN_MSG		= echo "\n ~ ~ ~ $(RED)Removing Programs$(NC) ~ ~ ~\n"
 
 all: $(NAME)
 
-$(NAME): $(LIBFT_PRE) $(MLX_PRE) $(OBJ_OUTPUT) $(OBJS)
+#$(NAME): $(LIBFT_PRE) $(MLX_PRE) $(OBJ_OUTPUT) $(OBJS)
+$(NAME): $(LIBFT_PRE) $(OBJ_OUTPUT) $(OBJS)
 	@$(PROGRAM_COMP)
-	$(CC) $(CFLAGS) $(OBJS) -lm -L$(LIBFT_DIR) -lft -L./ -l$(MLX) -framwork OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -lm -L$(LIBFT_DIR) -lft -o $(NAME)
+	@#$(CC) $(CFLAGS) $(OBJS) -lm -L$(LIBFT_DIR) -lft -L./ -l$(MLX) -framwork OpenGL -framework AppKit -o $(NAME)
 
 $(LIBFT_PRE):
 	$(MAKE) -C $(LIBFT_DIR)
@@ -84,11 +89,12 @@ $(OBJ_OUTPUT):
 	@touch .output
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -I $(HEADER) -I $(MLX_DIR) $< -o $@
+	$(CC) $(CFLAGS) -c -I $(HEADER) $< -o $@
+	@#$(CC) $(CFLAGS) -c -I $(HEADER) -I $(MLX_DIR) $< -o $@
 
 clean:
-	@$(MLX_CLEAN_MSG)
-	$(MAKE) clean -C $(MLX_DIR)
+	#@$(MLX_CLEAN_MSG)
+	#$(MAKE) clean -C $(MLX_DIR)
 	@$(CLEAN_MSG)
 	$(RM) $(OBJ_OUTPUT) $(OBJS)
 
