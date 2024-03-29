@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:25:01 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/28 17:41:30 by darkwater        ###   ########.fr       */
+/*   Updated: 2024/03/30 00:34:14 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char *argv[])
 		list_params();
 	param_checker(argv, argc);
 	if (argv[1][0] == 'm')
-		ft_mandelbrot();
+		ft_mandelbrot(ft_atof_fractol(argv[2]));
 	else if (argv[1][0] == 'j' && argc == 3)
 		ft_julia(ft_atof_fractol(argv[2]));
 	return (0);
