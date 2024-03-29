@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:23:29 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/30 06:29:46 by darkwater        ###   ########.fr       */
+/*   Updated: 2024/03/30 06:39:13 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Filled Julia Set is essentially a subset of the Mandelbrot Set, as in all Filled
 
 void	ft_julia(float constant)
 {
-	float	x;
-	float	y;
-	complex	z;
+	double	x;
+	double	y;
+	double complex	z;
 
 	x = -2;
 	while (x <= 2)
@@ -33,9 +33,9 @@ void	ft_julia(float constant)
 		{
 			z = x + y * I;
 			print_res(z, constant, 0);
-			y = nextafter(y, 2);
+			y += .001;
 		}
-		x = nextafter(x, 2);
+		x += .001;
 	}
 	ft_printf("This is the Julia Set!\n");
 }
