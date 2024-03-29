@@ -6,7 +6,7 @@
 #    By: darkwater <marvin@42.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 20:18:43 by darkwater         #+#    #+#              #
-#    Updated: 2024/03/30 00:30:01 by lstephen         ###   ########.fr        #
+#    Updated: 2024/03/30 05:46:10 by darkwater        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME			= fractol
 SRC				= main.c		\
 				mandelbrot.c	\
 				julia.c			\
-				utils.c
+				print_set.c		\
+				utils.c			\
 
 SRC_DIR			= ./src/
 

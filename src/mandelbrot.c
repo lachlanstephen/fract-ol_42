@@ -6,32 +6,37 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:22:08 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/30 00:36:24 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/03/30 05:49:12 by darkwater        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-/*
- * The mandelbrot set equation is that of Z(n+1) = Z(n)^2 + C
- * Iterate from 0 and move your way up through the results, make sure it never surpasses 2
+/* 
+The Mandelbrot set equation is that of Z(n+1) = Z(n)^2 + C, for all values of C within radius 2
+
+Iterate from 0 and move your way up through the results, make sure it never surpasses 2
+
+To create the Mandelbrot set, must use different values of C contained within radius 2 from origin.
+
+Definition: Mandelbrot set is the set of complex numbers c, for which the distance from the origin of the complex plane is bounded
  */
 
-void	print_res(float n, float c, int step)
+void	ft_mandelbrot(void)
 {
-	float	res;
+	double	x;
+	double	y;
+	complex	c;
 
-	res = 0;
-	if (step >= 100)
-		return ;
-	if (n > 2 || n < -2)
-		return ;
-	printf("%f\n", res = pow(n, 2) + c);
-	print_res(res, c, ++step);
-}
-
-void	ft_mandelbrot(float constant)
-{
-	print_res(0, constant, 0);
+	x = -5.000;
+	while (++x < 5)
+	{
+		y = -5.000;
+		while (++y < 5)
+		{
+			c = x + y * I;
+			print_res(0, c, 0);
+		}
+	}
 	ft_printf("This is the Mandelbrot set!\n");
 }
