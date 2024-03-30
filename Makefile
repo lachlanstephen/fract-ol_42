@@ -6,7 +6,7 @@
 #    By: darkwater <marvin@42.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 20:18:43 by darkwater         #+#    #+#              #
-#    Updated: 2024/03/30 22:56:13 by lstephen         ###   ########.fr        #
+#    Updated: 2024/03/31 04:53:43 by lstephen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ MLX_PRE			= $(addprefix $(MLX_DIR), $(MLX_NAME))
 
 CC				= cc
 
-CFLAGS			= -Wall -Wextra -Werror -Wpedantic
+CFLAGS			= -Wall -Wextra -Werror -Wpedantic -g
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Colours  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 

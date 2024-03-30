@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:23:29 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/31 01:35:27 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/03/31 04:15:27 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ void	ft_julia(double real, double imag, t_data *img, t_vars *vars)
 		{
 			y += .001;
 			z = CMPLX(x, y);
-			print_julia(z, c, 0, img);
+			if (print_julia(z, c, 0, img))
+				my_mlx_pixel_put(img, (SIZE_X / 2 + SIZE_X / 4 * creal(z)), (SIZE_Y / 2 - SIZE_Y / 4 * cimag(z)), 0x000000);
+			else
+				my_mlx_pixel_put(img, (SIZE_X / 2 + SIZE_X / 4 * creal(z)), (SIZE_Y / 2 - SIZE_Y / 4 * cimag(z)), 0xFFFFFF);
 		}
 	}
 	ft_printf("This is the Julia Set!\n");
