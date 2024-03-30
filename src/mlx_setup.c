@@ -6,7 +6,7 @@
 /*   By: lstephen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:55:24 by lstephen          #+#    #+#             */
-/*   Updated: 2024/03/31 04:59:15 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/03/31 05:33:57 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int colour)
 	*(unsigned int *)dst = colour;
 }
 
+/*
 int	not_main(void)
 {
 	t_vars	vars;
@@ -43,3 +44,4 @@ int	not_main(void)
 //	mlx_loop(vars.mlx_ptr);
 	return (0);
 }
+*/

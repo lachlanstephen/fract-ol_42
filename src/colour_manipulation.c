@@ -1,11 +1,12 @@
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   colour_manipulation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lstephen <lstephen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 02:39:34 by lstephen          #+#    #+#             */
-/*   Updated: 2024/02/03 03:47:13 by lstephen         ###   ########.fr       */
+/*   Created: 2024/03/31 05:26:37 by lstephen          #+#    #+#             */
+/*   Updated: 2024/03/31 05:27:08 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +26,18 @@ int	r_input(int colour)
 {
 	return ((colour >> 16) & 0xFF);
 }
+
 int	g_input(int colour)
 {
 	return ((colour >> 8) & 0xFF);
 }
+
 int	b_input(int colour)
 {
 	return (colour & 0xFF);
 }
 
+/*
 int	add_shade(double distance, int colour)
 {
 	int	trgb[4];
@@ -44,3 +48,4 @@ int	add_shade(double distance, int colour)
 	trgb[3] = b_input(colour);
 	return (trgb_convert(trgb[0], trgb[1], trgb[2], trgb[3]));
 }
+*/

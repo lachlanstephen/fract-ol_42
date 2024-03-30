@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:26:03 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/31 04:27:21 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/03/31 05:30:51 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ bool			print_julia(complex double n, complex double c, int step, t_data *img);
 
 float			ft_atof_fractol(char *str);
 
-void			ft_julia(double real, double imag, t_data *img, t_vars *vars);
+void			ft_julia(double complex c, t_data *img, t_vars *vars);
 void			ft_mandelbrot(t_data *img, t_vars *vars);
 void			list_params(void);
 void			print_mandelbrot(complex double n, complex double c, double step, t_data *img);

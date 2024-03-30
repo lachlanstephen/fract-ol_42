@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:22:08 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/31 04:22:22 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/03/31 05:27:35 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	ft_mandelbrot(t_data *img, t_vars *vars)
 		}
 	}
 	ft_printf("This is the Mandelbrot set!\n");
-	mlx_put_image_to_window(vars->mlx_ptr, vars->window_ptr, img->img_ptr, 0, 0);
+	mlx_put_image_to_window(vars->mlx_ptr, vars->window_ptr,
+		img->img_ptr, 0, 0);
 }
