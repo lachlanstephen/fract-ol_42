@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:22:08 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/30 06:44:29 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/03/31 01:36:02 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ contained within radius 2 from origin.
 
 Definition: Mandelbrot set is the set of complex numbers c,
 for which the distance from the origin of the complex plane is bounded
- */
+*/
 
-void	ft_mandelbrot(void)
+void	ft_mandelbrot(t_data *img, t_vars *vars)
 {
 	double			x;
 	double			y;
@@ -35,14 +35,15 @@ void	ft_mandelbrot(void)
 	x = -2;
 	while (x < 2)
 	{
+		x += .001;
 		y = -2;
 		while (y < 2)
 		{
-			c = x + y * I;
-			print_res(0, c, 0);
 			y += .001;
+			c = CMPLX(x, y);
+			print_mandelbrot(0, c, 0, img);
 		}
-		x += .001;
 	}
 	ft_printf("This is the Mandelbrot set!\n");
+	mlx_put_image_to_window(vars->mlx_ptr, vars->window_ptr, img->img_ptr, 0, 0);
 }

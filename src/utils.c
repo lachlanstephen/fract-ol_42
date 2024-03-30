@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:07 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/28 17:50:31 by darkwater        ###   ########.fr       */
+/*   Updated: 2024/03/31 01:34:05 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ float	ft_atof_fractol(char *str)
 		neg = true;
 	while (str[++i] != 0 && str[i] != '.')
 	{
+		if (str[i] > '9' || str[i] < '0')
+			list_params();
 		res *= 10;
 		res += str[i] - '0';
 	}
@@ -35,6 +37,8 @@ float	ft_atof_fractol(char *str)
 	{
 		while (str[i + ++sig] != 0)
 		{
+			if (str[i + sig] > '9' || str[i + sig] < '0')
+				list_params();
 			frac *= 10;
 			frac += str[i + sig] - '0';
 		}
@@ -43,6 +47,6 @@ float	ft_atof_fractol(char *str)
 	}
 	res += frac;
 	if (neg)
-		return (res * -1);
+		res *= -1;
 	return (res);
 }
