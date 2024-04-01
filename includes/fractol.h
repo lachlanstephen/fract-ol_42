@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:26:03 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/02 06:42:08 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/02 09:28:23 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,32 @@
 //Event Codes
 
 # define ESC 53
-# define SCROLL_UP 4
-# define SCROLL_DOWN 5
+# define SCROLL_UP 5
+# define SCROLL_DOWN 4
 
 typedef struct s_vars
 {
-	void	*img_ptr;
-	char	*address;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-	void	*mlx_ptr;
-	void	*window_ptr;
+	void			*mlx_ptr;
+	void			*window_ptr;
+	void			*img_ptr;
+	char			*address;
+	int				bits_per_pixel;
+	int				line_length;
+	int				endian;
+	double			scale;
+	double			option1;
+	double			option2;
+	double complex	constant;
+	char			frac_type;
 }				t_vars;
 
 //miniLibX Functions
 
-int				trgb_convert(int t, int r, int g, int b);
 int				add_shade(double distance, int colour);
-int				win_close(int keycode, t_vars *vars);
 int				clean_destroy(t_vars *vars);
+int				mouse_handles(int utton, int x, int y, t_vars *vars);
+int				trgb_convert(int t, int r, int g, int b);
+int				win_close(int keycode, t_vars *vars);
 
 void			my_mlx_pixel_put(t_vars *vars, int x, int y, int colour);
 
@@ -64,6 +70,7 @@ int				print_julia(complex double n, complex double c, int step, t_vars *vars);
 
 float			ft_atof_fractol(char *str);
 
+void			draw_fractal(t_vars *vars);
 void			ft_julia(double complex c, t_vars *vars, int step);
 void			ft_mandelbrot(t_vars *vars);
 void			list_params(void);
