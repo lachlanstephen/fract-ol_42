@@ -6,7 +6,7 @@
 /*   By: lstephen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:47:43 by lstephen          #+#    #+#             */
-/*   Updated: 2024/04/02 06:31:04 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/02 06:42:21 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	win_close(int keycode, t_vars *vars)
 {
-	if (keycode == 53)
+	if (keycode == ESC)
 		clean_destroy(vars);
 	return (0);
 }

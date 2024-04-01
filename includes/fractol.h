@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:26:03 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/02 06:30:32 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/02 06:42:08 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 # include <complex.h>
 # include <math.h>
 # include "../mlx_swift/mlx.h"
-//# include <X11/X.h>
 # include "../libft/includes/libft.h"
+
+//Screen Size Variables
 
 # ifndef SIZE_X
 #  define SIZE_X 1080
@@ -30,6 +31,12 @@
 # ifndef SIZE_Y
 #  define SIZE_Y 1080
 # endif
+
+//Event Codes
+
+# define ESC 53
+# define SCROLL_UP 4
+# define SCROLL_DOWN 5
 
 typedef struct s_vars
 {
@@ -50,7 +57,6 @@ int				win_close(int keycode, t_vars *vars);
 int				clean_destroy(t_vars *vars);
 
 void			my_mlx_pixel_put(t_vars *vars, int x, int y, int colour);
-
 
 //fract-ol Functions
 
