@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:25:01 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/31 05:31:29 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/02 06:26:00 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ Example: './fractol j .0065 0.2'\n\n");
 
 static void	param_checker(char **argv, int argc)
 {
-	if ((argv[1][0] != 'm' && argv[1][0] != 'j')
+	if ((argc < 2 || argc > 4)
+		|| (argv[1][0] != 'm' && argv[1][0] != 'j')
 		|| (argv[1][0] == 'm' && (argv[1][1] != 0 || argc > 2))
 		|| (argv[1][0] == 'j' && (argv[1][1] != 0 || argc > 4)))
 		list_params();
@@ -34,28 +35,31 @@ static void	param_checker(char **argv, int argc)
 int	main(int argc, char *argv[])
 {
 	t_vars	vars;
-	t_data	img;
 
-	vars.mlx_ptr = mlx_init();
-	vars.window_ptr = mlx_new_window(vars.mlx_ptr, SIZE_X, SIZE_Y, "fract-ol");
-	img.img_ptr = mlx_new_image(vars.mlx_ptr, SIZE_X, SIZE_Y);
-	img.address = mlx_get_data_addr(img.img_ptr, &img.bits_per_pixel,
-			&img.line_length, &img.endian);
-	if (argc < 2 || argc > 4)
-		list_params();
 	param_checker(argv, argc);
+	vars.mlx_ptr = mlx_init();
+	if (vars.mlx_ptr == NULL)
+		return (1);
+	vars.window_ptr = mlx_new_window(vars.mlx_ptr, SIZE_X, SIZE_Y, "fract-ol");
+	if (vars.window_ptr == NULL)
+		return (free(vars.mlx_ptr), 1);
+	vars.img_ptr = mlx_new_image(vars.mlx_ptr, SIZE_X, SIZE_Y);
+	vars.address = mlx_get_data_addr(vars.img_ptr, &vars.bits_per_pixel,
+			&vars.line_length, &vars.endian);
 	if (argv[1][0] == 'm')
-		ft_mandelbrot(&img, &vars);
+		ft_mandelbrot(&vars);
 	else if (argv[1][0] == 'j')
 	{
 		if (argc == 3)
-			ft_julia(CMPLX(ft_atof_fractol(argv[2]), 0), &img, &vars);
+			ft_julia(CMPLX(ft_atof_fractol(argv[2]), 0), &vars, 0);
 		else if (argc == 4)
-			ft_julia(CMPLX(ft_atof_fractol(argv[2]), ft_atof_fractol(argv[3])),
-				&img, &vars);
+			ft_julia(CMPLX(ft_atof_fractol(argv[2]), ft_atof_fractol(argv[3]))
+				, &vars, 0);
 		else
-			ft_julia(0, &img, &vars);
+			ft_julia(0, &vars, 0);
 	}
+	mlx_key_hook(vars.window_ptr, win_close, &vars);
+	mlx_hook(vars.window_ptr, 17, 0, clean_destroy, &vars);
 	mlx_loop(vars.mlx_ptr);
 	return (0);
 }

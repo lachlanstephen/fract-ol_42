@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:23:29 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/31 05:31:40 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/02 05:58:36 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,30 +27,37 @@ Filled Julia Set is essentially a subset of the Mandelbrot Set,
 as in all Filled Julia Sets are contained within the Mandelbrot Set.
 */
 
-void	ft_julia(double complex c, t_data *img, t_vars *vars)
+void	ft_julia(double complex c, t_vars *vars, int step)
 {
-	double			x;
-	double			y;
+	double			coord[2];
 	double complex	z;
 
-	x = -2;
-	while (x < 2)
+	coord[0] = -1.999;
+	while (coord[0] < 2)
 	{
-		x += .001;
-		y = -2;
-		while (y < 2)
+		coord[1] = -1.999;
+		while (coord[1] < 2)
 		{
-			y += .001;
-			z = CMPLX(x, y);
-			if (print_julia(z, c, 0, img))
-				my_mlx_pixel_put(img, (SIZE_X / 2 + SIZE_X / 4 * creal(z)),
-					(SIZE_Y / 2 - SIZE_Y / 4 * cimag(z)), 0x000000);
+			z = CMPLX(coord[0], coord[1]);
+			step = print_julia(z, c, 0, vars);
+			if (step >= 100)
+				my_mlx_pixel_put(vars, (SIZE_X / 2 - SIZE_X / 4 * creal(z)),
+					(SIZE_Y / 2 - SIZE_Y / 4 * cimag(z)), 0x00000000);
 			else
-				my_mlx_pixel_put(img, (SIZE_X / 2 + SIZE_X / 4 * creal(z)),
-					(SIZE_Y / 2 - SIZE_Y / 4 * cimag(z)), 0xFFFFFF);
+				my_mlx_pixel_put(vars, (SIZE_X / 2 - SIZE_X / 4 * creal(z)),
+					(SIZE_Y / 2 - SIZE_Y / 4 * cimag(z)), trgb_convert(0,
+						0 + (255 * step / 50), 0 + (255 * step / 50),
+						0 + (255 * step / 50)));
+			coord[1] += .001;
 		}
+		coord[0] += .001;
 	}
-	ft_printf("This is the Julia Set!\n");
 	mlx_put_image_to_window(vars->mlx_ptr, vars->window_ptr,
-		img->img_ptr, 0, 0);
+		vars->img_ptr, 0, 0);
 }
+
+/* TO ADD IF YOU"D LIKE SOME PRETTY COLOUR */
+//				my_mlx_pixel_put(vars, (SIZE_X / 2 - SIZE_X / 4 * creal(z)),
+//					(SIZE_Y / 2 - SIZE_Y / 4 * cimag(z)), trgb_convert(0,
+//						(100 + step * 10) % 255, (0 + step * 8) % 255,
+//						(96 + step * 9) % 255));

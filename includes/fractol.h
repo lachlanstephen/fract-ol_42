@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:26:03 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/31 05:30:51 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/02 06:30:32 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <complex.h>
 # include <math.h>
 # include "../mlx_swift/mlx.h"
+//# include <X11/X.h>
 # include "../libft/includes/libft.h"
 
 # ifndef SIZE_X
@@ -30,17 +31,13 @@
 #  define SIZE_Y 1080
 # endif
 
-typedef struct s_data
+typedef struct s_vars
 {
 	void	*img_ptr;
 	char	*address;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_data;
-
-typedef struct s_vars
-{
 	void	*mlx_ptr;
 	void	*window_ptr;
 }				t_vars;
@@ -49,19 +46,21 @@ typedef struct s_vars
 
 int				trgb_convert(int t, int r, int g, int b);
 int				add_shade(double distance, int colour);
+int				win_close(int keycode, t_vars *vars);
+int				clean_destroy(t_vars *vars);
 
-void			my_mlx_pixel_put(t_data *data, int x, int y, int colour);
+void			my_mlx_pixel_put(t_vars *vars, int x, int y, int colour);
 
 
 //fract-ol Functions
 
-bool			print_julia(complex double n, complex double c, int step, t_data *img);
+int				print_julia(complex double n, complex double c, int step, t_vars *vars);
 
 float			ft_atof_fractol(char *str);
 
-void			ft_julia(double complex c, t_data *img, t_vars *vars);
-void			ft_mandelbrot(t_data *img, t_vars *vars);
+void			ft_julia(double complex c, t_vars *vars, int step);
+void			ft_mandelbrot(t_vars *vars);
 void			list_params(void);
-void			print_mandelbrot(complex double n, complex double c, double step, t_data *img);
+void			print_mandelbrot(complex double n, complex double c, int step, t_vars *vars);
 
 #endif
