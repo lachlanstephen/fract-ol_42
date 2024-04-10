@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    swift_Makefile                                     :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: darkwater <marvin@42.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 20:18:43 by darkwater         #+#    #+#              #
-#    Updated: 2024/04/03 20:43:29 by lstephen         ###   ########.fr        #
+#    Updated: 2024/04/11 01:12:46 by lstephen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,12 +99,12 @@ $(OBJ_OUTPUT):
 	$(CC) $(CFLAGS) -c $(SIZE_X) $(SIZE_Y) -I $(HEADER) -I $(MLX_DIR) $< -o $@
 
 clean:
-	@$(MLX_CLEAN_MSG)
-	@$(MAKE) clean -C $(MLX_DIR)
 	@$(CLEAN_MSG)
 	$(RM) $(OBJ_OUTPUT) $(OBJS)
 
 fclean: clean
+	@$(MLX_CLEAN_MSG)
+	@$(MAKE) clean -C $(MLX_DIR)
 	$(MAKE) fclean -C $(LIBFT_DIR)
 	@$(FCLEAN_MSG)
 	$(RM) $(NAME)
