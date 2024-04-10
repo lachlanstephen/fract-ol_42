@@ -6,15 +6,15 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:07 by darkwater         #+#    #+#             */
-/*   Updated: 2024/03/31 05:38:38 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/10 22:47:39 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static float	ft_get_decimal(char *str, int i)
+static double	ft_get_decimal(char *str, int i)
 {
-	float	frac;
+	double	frac;
 	int		sig;
 
 	frac = 0;
@@ -31,12 +31,12 @@ static float	ft_get_decimal(char *str, int i)
 	return (frac);
 }
 
-float	ft_atof_fractol(char *str)
+double	ft_atod_fractol(char *str)
 {
-	float	res;
+	double	res;
 	int		i;
 	bool	neg;
-	float	frac;
+	double	frac;
 
 	res = 0;
 	i = -1;

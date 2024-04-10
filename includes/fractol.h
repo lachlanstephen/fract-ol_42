@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:26:03 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/02 09:28:23 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/10 22:47:29 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include <complex.h>
 # include <math.h>
 # include "../mlx_swift/mlx.h"
 # include "../libft/includes/libft.h"
@@ -25,11 +24,11 @@
 //Screen Size Variables
 
 # ifndef SIZE_X
-#  define SIZE_X 1080
+#  define SIZE_X 540
 # endif
 
 # ifndef SIZE_Y
-#  define SIZE_Y 1080
+#  define SIZE_Y 540
 # endif
 
 //Event Codes
@@ -48,9 +47,13 @@ typedef struct s_vars
 	int				line_length;
 	int				endian;
 	double			scale;
-	double			option1;
-	double			option2;
-	double complex	constant;
+	double			x;
+	double			y;
+	double			zx;
+	double			zy;
+	double			cx;
+	double			cy;
+	double			temp;
 	char			frac_type;
 }				t_vars;
 
@@ -66,14 +69,14 @@ void			my_mlx_pixel_put(t_vars *vars, int x, int y, int colour);
 
 //fract-ol Functions
 
-int				print_julia(complex double n, complex double c, int step, t_vars *vars);
+int				print_julia(t_vars *vars, int step);
 
-float			ft_atof_fractol(char *str);
+double			ft_atod_fractol(char *str);
 
 void			draw_fractal(t_vars *vars);
-void			ft_julia(double complex c, t_vars *vars, int step);
+void			ft_julia(t_vars *vars);
 void			ft_mandelbrot(t_vars *vars);
 void			list_params(void);
-void			print_mandelbrot(complex double n, complex double c, int step, t_vars *vars);
+void			print_mandelbrot(t_vars *vars, int step);
 
 #endif

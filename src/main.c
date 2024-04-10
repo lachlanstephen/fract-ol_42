@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:25:01 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/02 08:52:11 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/10 22:53:11 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,13 @@ static void	vars_initialise(t_vars *vars)
 	vars->address = mlx_get_data_addr(vars->img_ptr, &vars->bits_per_pixel,
 			&vars->line_length, &vars->endian);
 	vars->scale = 1;
-	vars->option1 = 0;
-	vars->option2 = 0;
+	vars->x = 0;
+	vars->y = 0;
+	vars->zx = 0;
+	vars->zy = 0;
+	vars->cx = 0;
+	vars->cy = 0;
+	vars->temp = 0;
 }
 
 int	main(int argc, char *argv[])
@@ -68,10 +73,9 @@ int	main(int argc, char *argv[])
 	{
 		vars.frac_type = 'j';
 		if (argc == 4 && argc--)
-			vars.option2 = ft_atof_fractol(argv[3]);
+			vars.cy = ft_atod_fractol(argv[3]);
 		else if (argc == 3)
-			vars.option1 = ft_atof_fractol(argv[2]);
-		vars.constant = CMPLX(vars.option1, vars.option2);
+			vars.cx = ft_atod_fractol(argv[2]);
 	}
 	draw_fractal(&vars);
 	mlx_key_hook(vars.window_ptr, win_close, &vars);

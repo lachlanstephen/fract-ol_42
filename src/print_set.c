@@ -6,43 +6,38 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 05:46:24 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/02 09:22:53 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:06:40 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int	print_julia(double complex n, double complex c, int step, t_vars *vars)
+int	print_julia(t_vars *vars, int step)
 {
-	if (step >= 100 || cabs(n) >= 2)
+	if (step >= 100 || (vars->zx * vars->zx) >= 4 || (vars->zy * vars->zy) >= 4)
 		return (step);
-	n = n * n + c;
-	return (print_julia(n, c, ++step, vars));
+	vars->temp = vars->zx * vars->zx - vars->zy * vars->zy + vars->cx;
+	vars->zy = 2 * vars->cx * vars->cy + vars->cy;
+	vars->zx = vars->temp;
+	return (print_julia(vars, ++step));
 }
 
-void	print_mandelbrot(double complex n, double complex c,
-	int step, t_vars *vars)
+void	print_mandelbrot(t_vars *vars, int step)
 {
-	double	coord[2];
-
-	coord[0] = SIZE_X / 2 + (SIZE_X / 4 * creal(c) * vars->scale);
-	coord[1] = SIZE_Y / 2 - (SIZE_Y / 4 * cimag(c) * vars->scale);
 	if (step >= 100)
 	{
-		if (coord[0] >= 0 && coord[1] >= 0 && coord[0] < SIZE_X && coord[1] < SIZE_Y)
-			my_mlx_pixel_put(vars, coord[0], coord[1], 0x00000000);
+		my_mlx_pixel_put(vars, vars->x, vars->y, 0x00000000);
 		return ;
 	}
-	if (cabs(n) >= 2)
+	if ((vars->zx * vars->zx) >= 4 || (vars->zy * vars->zy) >= 4)
 	{
-		if (coord[0] >= 0 && coord[1] >= 0 && coord[0] < SIZE_X && coord[1] < SIZE_Y)
-			my_mlx_pixel_put(vars, coord[0], coord[1], trgb_convert(0,
-					0 + (255 * step / 50), 0 + (255 * step / 50),
-					0 + (255 * step / 50)));
+		my_mlx_pixel_put(vars, vars->x, vars->y, trgb_convert(0,0 + (255 * step / 50), 0 + (255 * step / 50),0 + (255 * step / 50)));
 		return ;
 	}
-	n = n * n + c;
-	print_mandelbrot(n, c, ++step, vars);
+	vars->temp = vars->zx * vars->zx - vars->zy * vars->zy + vars->cx;
+	vars->zy = 2 * vars->cx * vars->cy + vars->cy;
+	vars->zx = vars->temp;
+	print_mandelbrot(vars, ++step);
 }
 
 /* TO ADD IF YOU"D LIKE SOME PRETTY COLOUR */
