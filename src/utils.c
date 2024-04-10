@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:07 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/10 22:47:39 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:47:32 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ double	ft_atod_fractol(char *str)
 	res = 0;
 	i = -1;
 	frac = 0;
+	neg = false;
 	if (str[0] == '-' && i++)
 		neg = true;
 	while (str[++i] != 0 && str[i] != '.')

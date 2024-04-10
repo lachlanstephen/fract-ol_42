@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:25:01 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/10 22:53:11 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:46:42 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char *argv[])
 		vars.frac_type = 'j';
 		if (argc == 4 && argc--)
 			vars.cy = ft_atod_fractol(argv[3]);
-		else if (argc == 3)
+		if (argc == 3)
 			vars.cx = ft_atod_fractol(argv[2]);
 	}
 	draw_fractal(&vars);

@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 05:46:24 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/10 23:06:40 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/10 23:54:53 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	print_mandelbrot(t_vars *vars, int step)
 	}
 	if ((vars->zx * vars->zx) >= 4 || (vars->zy * vars->zy) >= 4)
 	{
-		my_mlx_pixel_put(vars, vars->x, vars->y, trgb_convert(0,0 + (255 * step / 50), 0 + (255 * step / 50),0 + (255 * step / 50)));
+		my_mlx_pixel_put(vars, vars->x, vars->y, trgb_convert(0,
+				0 + (255 * step / 50),
+				0 + (255 * step / 50),
+				0 + (255 * step / 50)));
 		return ;
 	}
 	vars->temp = vars->zx * vars->zx - vars->zy * vars->zy + vars->cx;
