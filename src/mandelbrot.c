@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:22:08 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/10 23:04:18 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/11 02:24:12 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,16 @@ for which the distance from the origin of the complex plane is bounded
 
 void	ft_mandelbrot(t_vars *vars)
 {
+	vars->x = 0;
 	while (vars->x < SIZE_X)
 	{
-		vars->cx = (((4 * vars->x) - (2 * SIZE_X)) / SIZE_X);
+		vars->cx = ((4 * vars->x) - (2 * SIZE_X)) / (SIZE_X * vars->scale);
 		vars->y = 0;
 		while (vars->y < SIZE_Y)
 		{
 			vars->zx = 0;
 			vars->zy = 0;
-			vars->cy = (((-4 * vars->y) + (2 * SIZE_Y)) / SIZE_Y);
+			vars->cy = ((-4 * vars->y) + (2 * SIZE_Y)) / (SIZE_Y * vars->scale);
 			print_mandelbrot(vars, 0);
 			vars->y++;
 		}
