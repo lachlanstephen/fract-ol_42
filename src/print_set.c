@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 05:46:24 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/11 01:33:47 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/11 01:40:55 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	print_mandelbrot(t_vars *vars, int step)
 		return ;
 	}
 	vars->temp = vars->zx * vars->zx - vars->zy * vars->zy + vars->cx;
-	vars->zy = 2 * vars->cx * vars->cy + vars->cy;
+	vars->zy = 2 * vars->zx * vars->zy + vars->cy;
 	vars->zx = vars->temp;
 	print_mandelbrot(vars, ++step);
 }
