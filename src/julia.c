@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:23:29 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/11 02:29:46 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/11 02:44:19 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_julia(t_vars *vars)
 }
 
 /* TO ADD IF YOU"D LIKE SOME PRETTY COLOUR */
-//				my_mlx_pixel_put(vars, vars->x, vars->y,
-//					trgb_convert(0,
-//						(100 + step * 10) % 255, (0 + step * 8) % 255,
+//				my_mlx_pixel_put(vars, vars->x, vars->y, trgb_convert(0,
+//						(100 + step * 10) % 255,
+//						(0 + step * 8) % 255,
 //						(96 + step * 9) % 255));

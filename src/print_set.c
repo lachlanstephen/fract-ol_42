@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 05:46:24 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/11 02:29:43 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/11 02:40:21 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	print_mandelbrot(t_vars *vars, int step)
 }
 
 /* TO ADD IF YOU"D LIKE SOME PRETTY COLOUR */
-//		my_mlx_pixel_put(vars, (SIZE_X / 2 + SIZE_X / 4 * creal(c)),
-//			(SIZE_Y / 2 - SIZE_Y / 4 * cimag(c)), trgb_convert(0,
-//				(100 + step * 10) % 255, (0 + step * 8) % 255,
+//		my_mlx_pixel_put(vars, vars->x, vars->y, trgb_convert(0,
+//				(100 + step * 10) % 255,
+//				(0 + step * 8) % 255,
 //				(96 + step * 9) % 255));
