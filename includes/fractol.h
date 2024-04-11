@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:26:03 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/11 01:14:01 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:05:38 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@
 //Screen Size Variables
 
 # ifndef SIZE_X
-#  define SIZE_X 1080
+#  define SIZE_X 800
 # endif
 
 # ifndef SIZE_Y
-#  define SIZE_Y 1080
+#  define SIZE_Y 800
 # endif
 
 //Event Codes

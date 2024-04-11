@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:23:29 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/11 02:44:19 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:03:30 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_julia(t_vars *vars)
 			vars->zx = ((4 * vars->x) - (2 * SIZE_X)) / (SIZE_X * vars->scale);
 			vars->zy = ((-4 * vars->y) + (2 * SIZE_Y)) / (SIZE_Y * vars->scale);
 			step = print_julia(vars, 0);
-			if (step >= 100)
+			if (step >= 42)
 				my_mlx_pixel_put(vars, vars->x, vars->y, 0x00000000);
 			else
 				my_mlx_pixel_put(vars, vars->x, vars->y, trgb_convert(0,

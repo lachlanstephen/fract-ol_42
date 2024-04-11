@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:25:01 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/10 23:46:42 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:16:46 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,6 @@ static void	vars_initialise(t_vars *vars)
 	vars->address = mlx_get_data_addr(vars->img_ptr, &vars->bits_per_pixel,
 			&vars->line_length, &vars->endian);
 	vars->scale = 1;
-	vars->x = 0;
-	vars->y = 0;
-	vars->zx = 0;
-	vars->zy = 0;
 	vars->cx = 0;
 	vars->cy = 0;
 	vars->temp = 0;
