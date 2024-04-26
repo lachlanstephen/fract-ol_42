@@ -2,7 +2,7 @@
 
 <h3>Mark: 105/100</h3>
 
-fract-ol, a ring 2 project of the 42 Cursus, is one of the introductory projects for utilising a graphical libary and creating a basic computer graphics program. Students had the choice between `fract-ol`, `FdF` and `so_long`. The grpahical library is 42's own proprietary grpahical library, `MiniLibX`.
+fract-ol, a ring 2 project of the 42 Cursus, is one of the introductory projects for utilising a graphical libary and creating a basic computer graphics program. Students had the choice between `fract-ol`, `FdF` and `so_long`. The graphical library is 42's own proprietary graphical library, `MiniLibX`.
 
 The purpose of fract-ol was about creating graphically beautiful fractals. It delved into the notion of complex numbers, optimisation in graphics, and event handling.
 
@@ -33,9 +33,9 @@ The parameters my program takes are as follows:
 
 # Sets
 
-'m'			# Mandelbrot Set
+'m'		# Mandelbrot Set
 
-'j'			# Julia Set
+'j'		# Julia Set
 
 # Options - If no options given, defaults to '0' '0'
 
@@ -43,12 +43,14 @@ The parameters my program takes are as follows:
 
 <Option2>	# Imaginary Part
 
+# e.g. ./fract-ol m
+
 # e.g. ./fract-ol j 0.0065 .2
 ```
 
 _Note_: Mandelbrot Set does not accept options.
 
-_Note_: `<Options>` ONLY accepts floats. Option 1 and Option 2 combine to form a complex number.
+_Note_: `<Options>` ONLY accept floats. Option 1 and Option 2 combine to form a complex number. For the best outputs keep the values &gt; -2 and &lt; -2
 
 ### Program Output Examples
 
