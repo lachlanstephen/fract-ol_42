@@ -21,6 +21,8 @@ make	# Creates the fract-ol executable
 ./fract-ol <parameters>
 ```
 
+_Note_: The bonus 5 marks came from having cool colours. You'll notice I have a snippet of code commented out for both Mandelbrot and Julia where you can make the colours almost psychedelic.
+
 <h3>Program parameters</h3>
 
 The parameters my program takes are as follows:
@@ -50,13 +52,26 @@ The parameters my program takes are as follows:
 
 _Note_: Mandelbrot Set does not accept options.
 
-_Note_: `<Options>` ONLY accept floats. Option 1 and Option 2 combine to form a complex number.
-
-**For the best outputs keep the values &gt; -2 and &lt; 2.**
+_Note_: `<Options>` ONLY accept floats. Option 1 and Option 2 combine to form a complex number. For the best outputs keep the values &gt; -2 and &lt; 2.
 
 ### Program Output Examples
 
-TBC
+TO BE ADDED.
+
+### Mathematical Theory
+
+Essentially, the Mandelbrot set, is the behaviour of the iteration from 0 of the equation Z<sub>n + 1</sub> = Z<sub>n</sub><sup>2</sup> + C. Where C is the complex number formed from its starting position on the complex plane. So the value of C changes as you move around the x and y<sub>i</sub> axis.
+
+There are two potential results:
+
+1. The number gets arbitrarily large
+2. The number remains small, never exceeds 2 from the origin
+
+Based on the result of the point when subbed into the equation, we assign it relevant colours, which gives us the stunning Mandelbrot fractal most people are familiar with.
+
+The Julia Set, is similarly the behaviour of iteration from 0 of the same equation, however, the C remains constant, and instead we change the starting value of Z.
+
+If you're interested in finding out more or just want to have a chat, reach out to me on my social links (I only really have LinkedIn or my email), or leave a comment :) I had a lot of fun with this project and would love to share my enthusiasm.
 
 ### Plans for repository
 
@@ -67,4 +82,4 @@ TBC
 
 ### Personal Note
 
-I really enjoy mathematics, and personally find it quite beautiful, and this project was a perfect exmaple of this. Delving into the concept of complex numbers and their applications, as well as quadratics, was something I've missed since finishing school mathematics. I'm glad I chose this program, and got to create these works of art.
+I really enjoy mathematics, and personally find it quite beautiful, and this project was a perfect exmaple of this. Delving into the concept of complex numbers and their applications, as well as quadratics, was something I've missed since finishing school mathematics. I'm glad I chose this program, and got to create these works of art. Whilst quite complicated, once you understand what's happening it can be very satisfying to see the outputs.
