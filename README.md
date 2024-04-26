@@ -8,13 +8,19 @@ The purpose of fract-ol was about creating graphically beautiful fractals. It de
 
 <h3>Running the program</h3>
 
+Depending on what operating system your computer is running on, you may find you have issues. I include two versions of miniLibX to try and use.
+
 To compile and run the program, run the following commands:
 
 ```bash
 
-# Make using the Makefile
+# Make using the Makefile for openGL
 
-make	# Creates the fract-ol executable
+make -f opengl_Makefile		# Creates the fract-ol executable with openGL
+
+# If that doesn't work, use Makefile for swift
+
+make re -f swift_Makefile	# Creates the fract-ol executable with swift
 
 # Run the fract-ol executable
 
