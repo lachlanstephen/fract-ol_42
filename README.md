@@ -35,7 +35,7 @@ The parameters my program takes are as follows:
 
 'm'			# Mandelbrot Set
 
-'j' 		# Julia Set
+'j'			# Julia Set
 
 # Options - If no options given, defaults to '0' '0'
 
@@ -46,6 +46,21 @@ The parameters my program takes are as follows:
 # e.g. ./fract-ol j 0.0065 .2
 ```
 
-_NOTE_: Mandelbrot Set does not accept options.
+_Note_: Mandelbrot Set does not accept options.
 
-_NOTE_: `<Options>` ONLY accepts floats. Option 1 and Option 2 combine to form a complex number.
+_Note_: `<Options>` ONLY accepts floats. Option 1 and Option 2 combine to form a complex number.
+
+### Program Output Examples
+
+TBC
+
+### Plans for repository
+
+- [ ] Screenshots to this documentation of exmaple outputs
+- [ ] Add mouse position zoom management (bonus)
+- [ ] Add another fractal set (bonus)
+- [ ] Re-evaluate project with bonuses
+
+### Personal Note
+
+I really enjoy mathematics, and personally find it quite beautiful, and this project was a perfect exmaple of this. Delving into the concept of complex numbers and their applications, as well as quadratics, was something I've missed since finishing school mathematics. I'm glad I chose this program, and got to create these works of art.
