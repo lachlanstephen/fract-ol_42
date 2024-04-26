@@ -50,7 +50,9 @@ The parameters my program takes are as follows:
 
 _Note_: Mandelbrot Set does not accept options.
 
-_Note_: `<Options>` ONLY accept floats. Option 1 and Option 2 combine to form a complex number. For the best outputs keep the values &gt; -2 and &lt; -2
+_Note_: `<Options>` ONLY accept floats. Option 1 and Option 2 combine to form a complex number.
+
+**For the best outputs keep the values &gt; -2 and &lt; 2.**
 
 ### Program Output Examples
 
