@@ -21,7 +21,10 @@ make	# Creates the fract-ol executable
 ./fract-ol <parameters>
 ```
 
-_Note_: The bonus 5 marks came from having cool colours. You'll notice I have a snippet of code commented out for both Mandelbrot and Julia where you can make the colours almost psychedelic.
+> [!WARNING]
+> You may find the program won't compile because of issues with miniLibX. If you can't solve the issue, message me and I'll take you through it.
+
+_Note_: The bonus 5 marks came from having cool colours. You'll notice I have a snippet of code commented out for both Mandelbrot and Julia where you can make the colours almost psychedelic, when you sub out for the current colours I use. Personally I like the shades of black and white, I think it looks cleaner, and very pleasing to the eye.
 
 <h3>Program parameters</h3>
 
