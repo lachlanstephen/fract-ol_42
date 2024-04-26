@@ -6,6 +6,9 @@ fract-ol, a ring 2 project of the 42 Cursus, is one of the introductory projects
 
 The purpose of fract-ol was about creating graphically beautiful fractals. It delved into the notion of complex numbers, optimisation in graphics, and event handling.
 
+> [!NOTE]
+> Currently, the project only works on MacOS, as I only imported the Mac versions of miniLibX
+
 <h3>Running the program</h3>
 
 Depending on what operating system your computer is running on, you may find you have issues. I include two versions of miniLibX to try and use.
