@@ -13,9 +13,6 @@ The purpose of fract-ol was about creating graphically beautiful fractals. It de
 
 <h3>Running the program</h3>
 
-> [!TIP]
-> For the best performance, try compiling with openGL version of miniLibX first. If that fails, then try using the swift version.
-
 To compile and run the program, run the following commands:
 
 ```bash
@@ -33,9 +30,11 @@ make re -f swift_Makefile	# Creates the fract-ol executable with swift
 ./fract-ol <parameters>
 ```
 
+> [!TIP]
+> For the best performance, try compiling with openGL version of miniLibX first. If that fails, then try using the swift version.
+
 > [!WARNING]
-> You may find the program won't compile because of issues with miniLibX, independent of what version you try and use.
-> If you can't solve the issue, message me and I'll help sort it..
+> You may find the program won't compile because of issues with miniLibX, independent of what version you try and use. If you can't solve the issue, message me and I'll guide you through it.
 
 _Note_: The bonus 5 marks came from having cool colours. You'll notice I have a snippet of code commented out for both Mandelbrot and Julia where you can make the colours almost psychedelic, when you sub out for the current colours I use. Personally I like the shades of black and white, I think it looks cleaner, and very pleasing to the eye.
 
@@ -85,7 +84,7 @@ An example Julia Set Fractal:
 ```
 ![julia set](./assets/img/julia.png)
 
-> [!TIP}
+> [!TIP]
 > You can use your scroll wheel to scroll in and out of the image. It gets pretty laggy the further you zoom in though, as the program has to do increasingly more calculations.
 
 ### Mathematical Theory
