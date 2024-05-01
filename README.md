@@ -1,6 +1,6 @@
 <h1>fract-ol</h1>
 
-![mandelbrot set](./assets/img/mandelbrot-2000)
+![mandelbrot set](./assets/img/mandelbrot-2000.png)
 
 <h3>Mark: 105/100</h3>
 
@@ -68,9 +68,20 @@ _Note_: Mandelbrot Set does not accept options.
 
 _Note_: `<Options>` ONLY accept floats. Option 1 and Option 2 combine to form a complex number. For the best outputs keep the values &gt; -2 and &lt; 2.
 
-### Program Output Examples
+### Program Graphical Output
 
-TO BE ADDED.
+The Mandelbrot Set Image at the start of this documentation is the graphical output of my program for the command:
+
+```bash
+./fract-ol m
+```
+
+An example Julia Set Fractal:
+
+```bash
+./fract-ol j 0 .8
+```
+![julia set](./assets/img/julia-2000.png)
 
 ### Mathematical Theory
 
