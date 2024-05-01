@@ -47,7 +47,7 @@
 #define	MLX_H
 
 
-void	*mlx_init(void);
+void	*mlx_init();
 /*
 **  needed before everything else.
 **  return (void *)0 if failed
@@ -94,11 +94,11 @@ unsigned int	mlx_get_color_value(void *mlx_ptr, int color);
 ** dealing with Events
 */
 
-int	mlx_mouse_hook (void *win_ptr, int (*funct_ptr)(void), void *param);
-int	mlx_key_hook (void *win_ptr, int (*funct_ptr)(void), void *param);
-int	mlx_expose_hook (void *win_ptr, int (*funct_ptr)(void), void *param);
+int	mlx_mouse_hook (void *win_ptr, int (*funct_ptr)(), void *param);
+int	mlx_key_hook (void *win_ptr, int (*funct_ptr)(), void *param);
+int	mlx_expose_hook (void *win_ptr, int (*funct_ptr)(), void *param);
 
-int	mlx_loop_hook (void *mlx_ptr, int (*funct_ptr)(void), void *param);
+int	mlx_loop_hook (void *mlx_ptr, int (*funct_ptr)(), void *param);
 int	mlx_loop (void *mlx_ptr);
 
 
@@ -135,10 +135,10 @@ int	mlx_destroy_image(void *mlx_ptr, void *img_ptr);
 */
 
 int	mlx_hook(void *win_ptr, int x_event, int x_mask,
-                 int (*funct)(void), void *param);
+                 int (*funct)(), void *param);
 
-int     mlx_mouse_hide(void);
-int     mlx_mouse_show(void);
+int     mlx_mouse_hide();
+int     mlx_mouse_show();
 int     mlx_mouse_move(void *win_ptr, int x, int y);
 int     mlx_mouse_get_pos(void *win_ptr, int *x, int *y);
 

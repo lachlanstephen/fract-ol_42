@@ -6,7 +6,7 @@
 /*   By: darkwater <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:26:03 by darkwater         #+#    #+#             */
-/*   Updated: 2024/04/11 12:05:38 by lstephen         ###   ########.fr       */
+/*   Updated: 2024/05/01 17:33:04 by lstephen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <math.h>
-# include "../mlx_swift/mlx.h"
+//# include "../mlx_swift/mlx.h"	- Swift Version
+# include "../mlx_opengl/mlx.h"		// openGL Version
 # include "../libft/includes/libft.h"
 
 //Screen Size Variables
@@ -61,7 +62,7 @@ typedef struct s_vars
 
 int				add_shade(double distance, int colour);
 int				clean_destroy(t_vars *vars);
-int				mouse_handles(int utton, int x, int y, t_vars *vars);
+int				mouse_handles(int button, int x, int y, t_vars *vars);
 int				trgb_convert(int t, int r, int g, int b);
 int				win_close(int keycode, t_vars *vars);
 
