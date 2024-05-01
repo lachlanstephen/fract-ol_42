@@ -1,7 +1,6 @@
 <h1>fract-ol</h1>
 
 ![mandelbrot set](./assets/img/mandelbrot.png)
-
 <h3>Mark: 105/100</h3>
 
 fract-ol, a ring 2 project of the 42 Cursus, is one of the introductory projects for utilising a graphical libary and creating a basic computer graphics program. Students had the choice between `fract-ol`, `FdF` and `so_long`. The graphical library is 42's own proprietary graphical library, `MiniLibX`.
@@ -83,7 +82,6 @@ An example Julia Set Fractal:
 ./fract-ol j 0 .8
 ```
 ![julia set](./assets/img/julia.png)
-
 > [!TIP]
 > You can use your scroll wheel to scroll in and out of the image. It gets pretty laggy the further you zoom in though, as the program has to do increasingly more calculations.
 
