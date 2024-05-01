@@ -1,5 +1,7 @@
 <h1>fract-ol</h1>
 
+![mandelbrot set](./assets/img/mandelbrot-2000)
+
 <h3>Mark: 105/100</h3>
 
 fract-ol, a ring 2 project of the 42 Cursus, is one of the introductory projects for utilising a graphical libary and creating a basic computer graphics program. Students had the choice between `fract-ol`, `FdF` and `so_long`. The graphical library is 42's own proprietary graphical library, `MiniLibX`.
